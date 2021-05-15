@@ -1,0 +1,23 @@
+name: Create Notions
+
+on:
+  schedule:
+    - cron: "5 23 * * MON-FRI"
+#  push:
+#    branches:
+#      - master
+
+jobs:
+  create_todo:
+    name: Create Notions
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Create a new note
+        run: |
+          npm install
+          npm run test 2
+        env:
+          CI: true
