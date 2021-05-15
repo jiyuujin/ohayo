@@ -1,0 +1,16 @@
+{
+  "name": "ohayo",
+  "version": "0.1.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "test": "node --inspect --require ts-node/register src/main.ts"
+  },
+  "devDependencies": {
+    "@notionhq/client": "^0.1.3",
+    "@types/node": "^15.3.0",
+    "dotenv": "^9.0.2",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4"
+  }
+}
