@@ -20,4 +20,6 @@ jobs:
           npm install
           npm run test 2
         env:
+          NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
+          OHAYO_NOTES_DATABASE_ID: ${{ secrets.OHAYO_NOTES_DATABASE_ID }}
           CI: true
