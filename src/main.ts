@@ -1,6 +1,8 @@
 const { Client, LogLevel } = require('@notionhq/client');
 const dotenv = require('dotenv');
 
+const { getJPStandardDateTime } = require('./utils');
+
 dotenv.config();
 
 const notion = new Client({
@@ -17,7 +19,7 @@ const notion = new Client({
     }
 
     const createOhayoNote = async () => {
-        const current = new Date();
+        const current = new Date(getJPStandardDateTime());
         const response = await notion.pages.create({
             parent: {
                 database_id: process.env.OHAYO_NOTES_DATABASE_ID,

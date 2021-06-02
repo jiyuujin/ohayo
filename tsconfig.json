@@ -3,7 +3,7 @@
     "baseUrl": ".",
     "target": "esnext",
     "lib": ["dom", "esnext"],
-    "module": "esnext",
+    "module": "commonjs",
     "moduleResolution": "node",
     "sourceMap": true,
     "experimentalDecorators": true,
