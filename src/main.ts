@@ -29,7 +29,7 @@ const notion = new Client({
                     title: [
                         {
                             text: {
-                                content: `${current.getMonth() + 1}/${current.getDate() + 1} 予定`
+                                content: `${current.getMonth() + 1}/${current.getDate()} 予定`
                             }
                         }
                     ]
