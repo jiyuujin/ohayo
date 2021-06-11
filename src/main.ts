@@ -16,9 +16,12 @@ const notion = new Client({
             database_id: process.env.OHAYO_NOTES_DATABASE_ID
         });
         console.log(response);
+        return response;
     }
 
     const createOhayoNote = async () => {
+        const notes = await fetchOhayoNote();
+        const count = notes.results.length;
         const current = new Date(getJPStandardDateTime());
         const response = await notion.pages.create({
             parent: {
@@ -29,7 +32,7 @@ const notion = new Client({
                     title: [
                         {
                             text: {
-                                content: `${current.getMonth() + 1}/${current.getDate()} で喋ったこと`
+                                content: `${current.getMonth() + 1}/${current.getDate()} で喋ったこと #${count + 1}`
                             }
                         }
                     ]
