@@ -15,7 +15,6 @@ const notion = new Client({
         const response = await notion.databases.query({
             database_id: process.env.OHAYO_NOTES_DATABASE_ID
         });
-        console.log(response);
         return response;
     }
 
@@ -39,7 +38,6 @@ const notion = new Client({
                 }
             }
         });
-        console.log(response);
     }
 
     switch (process.argv[2]) {
