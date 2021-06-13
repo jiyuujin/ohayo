@@ -1,7 +1,7 @@
 const { Client, LogLevel } = require('@notionhq/client');
 const dotenv = require('dotenv');
 
-const { getJPStandardDateTime } = require('./utils');
+const { getJPStandardDateTime, getDoubleDigestNumber } = require('./utils');
 
 dotenv.config();
 
@@ -31,7 +31,7 @@ const notion = new Client({
                     title: [
                         {
                             text: {
-                                content: `${current.getMonth() + 1}/${current.getDate()} で喋ったこと #${count + 1}`
+                                content: `${current.getFullYear()}/${getDoubleDigestNumber(current.getMonth() + 1)}/${current.getDate()} で喋ったこと #${count + 1}`
                             }
                         }
                     ]
