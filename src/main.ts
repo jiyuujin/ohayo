@@ -13,7 +13,13 @@ const notion = new Client({
 (async () => {
     const fetchOhayoNote = async () => {
         const response = await notion.databases.query({
-            database_id: process.env.OHAYO_NOTES_DATABASE_ID
+            database_id: process.env.OHAYO_NOTES_DATABASE_ID,
+            filter: {
+                property: 'Type',
+                text: {
+                    does_not_equal: 'extended'
+                }
+            }
         });
         return response;
     }
