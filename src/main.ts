@@ -3,7 +3,7 @@ const dotenv = require('dotenv');
 
 const {
     getJPStandardDateTime,
-    getDoubleDigestNumber,
+    getFormatDate,
     getMaximumIndex
 } = require('./utils');
 
@@ -37,7 +37,7 @@ const notion = new Client({
     const createOhayoNote = async () => {
         const notes = await fetchOhayoNote();
         const count = getMaximumIndex(notes.results) + 1;
-        const current = new Date(getJPStandardDateTime());
+        const datetime = new Date(getJPStandardDateTime());
         const response = await notion.pages.create({
             parent: {
                 database_id: process.env.OHAYO_NOTES_DATABASE_ID,
@@ -47,7 +47,7 @@ const notion = new Client({
                     title: [
                         {
                             text: {
-                                content: `${current.getFullYear()}/${getDoubleDigestNumber(current.getMonth() + 1)}/${getDoubleDigestNumber(current.getDate())} で喋ったこと #${count}`
+                                content: `${getFormatDate(datetime)} で喋ったこと #${count}`
                             }
                         }
                     ]

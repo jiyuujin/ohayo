@@ -5,6 +5,21 @@ export const getJPStandardDateTime = (date?: Date): string => {
     return new Date(date!).toLocaleString('en-US', { timeZone: 'Asia/Tokyo' })
 }
 
+/**
+ * `YYYY/MM/DD` 形式で日付を取得する
+ * @param date
+ */
+export const getFormatDate = (date) => {
+    const year = date.getFullYear();
+    const month = getDoubleDigestNumber(date.getMonth() + 1);
+    const day = getDoubleDigestNumber(date.getDate());
+    return `${year}/${month}/${day}`;
+}
+
+/**
+ * 必ず 2 桁で数値を取得する
+ * @param number
+ */
 export const getDoubleDigestNumber = (number: number) => {
     if (number < 10) {
         return `0${number}`
