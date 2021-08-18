@@ -1,7 +1,11 @@
 const { Client, LogLevel } = require('@notionhq/client');
 const dotenv = require('dotenv');
 
-const { getJPStandardDateTime, getDoubleDigestNumber } = require('./utils');
+const {
+    getJPStandardDateTime,
+    getDoubleDigestNumber,
+    getMaximumIndex
+} = require('./utils');
 
 dotenv.config();
 
@@ -19,14 +23,20 @@ const notion = new Client({
                 text: {
                     does_not_equal: 'extended'
                 }
-            }
+            },
+            sorts: [
+                {
+                    property: "Name",
+                    direction: "descending"
+                }
+            ]
         });
         return response;
     }
 
     const createOhayoNote = async () => {
         const notes = await fetchOhayoNote();
-        const count = notes.results.length;
+        const count = getMaximumIndex(notes.results) + 1;
         const current = new Date(getJPStandardDateTime());
         const response = await notion.pages.create({
             parent: {
