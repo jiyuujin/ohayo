@@ -39,7 +39,7 @@ export const getMaximumIndex = (items) => {
     while ((match = regexp.exec(items[0].properties['Name'].title[0].plain_text)) !== null) {
         matches.push(match[2]);
     }
-    return matches[0];
+    return Number(matches[0]);
 }
 
 /**
@@ -47,5 +47,5 @@ export const getMaximumIndex = (items) => {
  * @param items
  */
 export const getArticleSize = (items) => {
-    return items.length;
+    return Number(items.length);
 }
