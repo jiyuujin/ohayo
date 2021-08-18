@@ -47,7 +47,7 @@ const notion = new Client({
                     title: [
                         {
                             text: {
-                                content: `${current.getFullYear()}/${getDoubleDigestNumber(current.getMonth() + 1)}/${getDoubleDigestNumber(current.getDate())} で喋ったこと #${count + 1}`
+                                content: `${current.getFullYear()}/${getDoubleDigestNumber(current.getMonth() + 1)}/${getDoubleDigestNumber(current.getDate())} で喋ったこと #${count}`
                             }
                         }
                     ]
