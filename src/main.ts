@@ -47,7 +47,7 @@ const notion = new Client({
                     title: [
                         {
                             text: {
-                                content: `${getFormatDate(datetime)} で喋ったこと #${count}`
+                                content: `${getFormatDate(datetime)} で喋ったこと Vol.${count}`
                             }
                         }
                     ]

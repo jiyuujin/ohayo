@@ -33,7 +33,7 @@ export const getDoubleDigestNumber = (number: number) => {
  * @param items
  */
 export const getMaximumIndex = (items) => {
-    const regexp = /(20\d{2}\/\d{2}\/\d{2}) で喋ったこと #(^[0-9]|[0-9][0-9]|[0-9][0-9][0-9]$)/g;
+    const regexp = /(20\d{2}\/\d{2}\/\d{2}) で喋ったこと Vol.(^[0-9]|[0-9][0-9]|[0-9][0-9][0-9]$)/g;
     let match;
     let matches = [];
     while ((match = regexp.exec(items[0].properties['Name'].title[0].plain_text)) !== null) {
