@@ -1,6 +1,6 @@
 # Notion API
 
-Until 7th Oct 2021, summarized to Notion by [`#ohayo_engineer`](https://www.notion.so/f8fc57393e924ba8a51963d90963e703?v=851dc3e7626b417a844471840a7bc6ae)
+Until 7th Oct 2021, summarized to Notion by [`#ohayo_engineer`](https://www.notion.so/Quick-Note-c0a6b685fb524ca4823cc1dccbf2f9b8)
 
 ![](https://i.imgur.com/7tiOTpE.jpg)
 
