@@ -28,6 +28,6 @@ jobs:
     - name: Fetch
       run: |
         npm install
-        npm run test 1
+        npm run test --fetch
       env:
         CI: true

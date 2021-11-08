@@ -57,10 +57,10 @@ const notion = new Client({
     }
 
     switch (process.argv[2]) {
-        case '1':
+        case '--fetch':
             await fetchOhayoNote();
             break;
-        case '2':
+        case '--create':
             await createOhayoNote();
             break;
         default:
